@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json.schemastore.org/package",
+  "name": "strapi-plugin-placeholder",
+  "version": "4.1.5",
+  "description": "Generate base64 placeholders for Strapi images",
+  "author": {
+    "name": "@WalkingPizza",
+    "url": "https://github.com/WalkingPizza"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WalkingPizza/strapi-plugin-placeholder"
+  },
+  "strapi": {
+    "name": "placeholder",
+    "description": "Generate base64 placeholders for your Strapi images",
+    "kind": "plugin",
+    "displayName": "Placeholder"
+  },
+  "engines": {
+    "node": ">=12.x.x <=16.x.x",
+    "npm": ">=6.0.0"
+  },
+  "keywords": [
+    "strapi",
+    "strapi plugin",
+    "placeholder",
+    "plaiceholder",
+    "next",
+    "nextjs"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@strapi/strapi": "^4.1.5",
+    "sharp": "^0.30.1",
+    "yup": "^0.32.9"
+  },
+  "dependencies": {
+    "plaiceholder": "^2.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.12.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-node": "^11.1.0",
+    "prettier": "^2.6.1",
+    "yup": "^0.32.9"
+  }
+}
