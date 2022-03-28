@@ -1,0 +1,24 @@
+name: Publish
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout main branch"
+        uses: actions/checkout@v2
+      - name: "Setup Node"
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14.x"
+      - name: "Install Yarn"
+        run: npm install -g yarn
+      - name: "Install dependencies"
+        run: yarn install --frozen-lockfile
+      - name: "Publish to NPM"
+        run: npm publish
+        env:
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
