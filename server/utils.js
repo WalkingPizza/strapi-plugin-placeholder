@@ -1,6 +1,6 @@
 'use strict';
 
-const pluginName = require('./plugin-name');
+const pluginId = require('./plugin-id');
 
 /**
  * Checks whether the passed MIME type is supported by the plugin, hence whetehr a placeholder can be generated.
@@ -16,7 +16,7 @@ const isValidMimeType = (mimeType) => mimeType.startsWith('image/');
  * @param {*} service the name of the service to retrieve
  * @returns the service
  */
-const getService = (strapi, service) => strapi.plugin(pluginName).service(service);
+const getService = (strapi, service) => strapi.plugin(pluginId).service(service);
 
 module.exports = {
   isValidMimeType,
