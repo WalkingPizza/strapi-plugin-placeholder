@@ -10,8 +10,11 @@ const mimeTypes = require('mime-types');
  */
 
 const canGeneratePlaceholder = (file) => {
-  if (!file.mime) file.mime = mimeTypes.lookup(file.name);
-  return file.mime?.startsWith('image/');
+  const lookedUpMime = mimeTypes.lookup(file.name);
+  if (!file.mime && lookedUpMime) file.mime = lookedUpMime;
+  // if file.url is missing the 'plaiceholder' fails to generate a placeholder
+  // when updating an image in strapi, it doesn't populate the 'url'
+  return file.mime?.startsWith('image/') && file.url;
 };
 
 /**
