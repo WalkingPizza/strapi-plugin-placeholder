@@ -10,8 +10,15 @@ const mimeTypes = require('mime-types');
  */
 
 const canGeneratePlaceholder = (file) => {
-  if (!file.mime) file.mime = mimeTypes.lookup(file.name);
-  return file.mime?.startsWith('image/');
+  if (!file.mime) {
+    // Only lookup the mime if file lacks the prop.
+    const lookedUpMime = mimeTypes.lookup(file.name);
+    if(lookedUpMime) { // lookedUpMime can return false if it failed to match
+      file.mime = lookedUpMime;
+    }
+  }
+
+  return file.mime?.startsWith('image/') && file.url;
 };
 
 /**
