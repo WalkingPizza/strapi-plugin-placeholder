@@ -42,7 +42,7 @@ module.exports = {
 };
 ```
 
-For more information regarding the `size` param, refer to the [Plaiceholder docs](https://plaiceholder.co/docs/usage).
+For more information regarding the `size` param, refer to the [Plaiceholder docs](https://plaiceholder.co/).
 
 ### Generate Placeholders For Existing Images
 
