@@ -16,7 +16,11 @@ module.exports = ({ strapi }) => ({
       const { base64 } = await getPlaiceholder(url, settings);
       return base64;
     } catch (e) {
-      strapi.log.error(e);
+      if (e.code === 'ENOENT') {
+        strapi.log.warn(`File "${url}" is missing!`)
+      } else {
+        strapi.log.error(e);
+      }
       return null;
     }
   },

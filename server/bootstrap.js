@@ -17,7 +17,12 @@ module.exports = ({ strapi }) => {
     }
 
     if (!canGeneratePlaceholder(data)) return;
-    data.placeholder = await getService(strapi, 'placeholder').generate(data.url);
+    const placeholder = await getService(strapi, 'placeholder').generate(data.url);
+    if (placeholder === null) {
+      data.placeholder = data.placeholder || null
+    } else {
+      data.placeholder = placeholder
+    }
   };
 
   strapi.db.lifecycles.subscribe({
