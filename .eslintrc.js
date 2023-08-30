@@ -1,6 +1,10 @@
 'use strict';
 
 module.exports = {
+  parser: "@babel/eslint-parser",
+  parserOptions: {
+    requireConfigFile: false,
+  },
   extends: ['eslint:recommended', 'prettier', 'plugin:node/recommended'],
   env: {
     es6: true,
