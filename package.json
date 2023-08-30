@@ -18,7 +18,7 @@
     "displayName": "Placeholder"
   },
   "engines": {
-    "node": ">=12.x.x <=18.x.x",
+    "node": ">=12.x.x <=19.x.x",
     "npm": ">=6.0.0"
   },
   "keywords": [
@@ -40,10 +40,12 @@
     "plaiceholder": "^2.3.0"
   },
   "devDependencies": {
-    "eslint": "^8.12.0",
-    "eslint-config-prettier": "^8.5.0",
+    "@babel/core": "^7.22.11",
+    "@babel/eslint-parser": "^7.22.11",
+    "eslint": "^8.48.0",
+    "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-node": "^11.1.0",
-    "prettier": "^2.6.1",
+    "prettier": "^3.0.3",
     "yup": "^0.32.9"
   }
 }
